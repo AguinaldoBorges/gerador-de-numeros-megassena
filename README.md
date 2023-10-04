@@ -2,6 +2,8 @@
 
 Esta é uma API simples que fornece uma sequência de números da Mega-Sena.
 
+![ok](./src/assets/screen2.jpg)
+
 ## Rotas
 
 ### 1. Rota para Obter uma Sequência de Números da Mega-Sena
@@ -35,6 +37,8 @@ Esta é uma API simples que fornece uma sequência de números da Mega-Sena.
 http://localhost:3000/
 
 Servidor rodando na porta 3000
+
+![ok](./src/assets/screen1.jpg)
 
 ## Observações
 * Esta API é uma implementação simples apenas para fins ilustrativos.
