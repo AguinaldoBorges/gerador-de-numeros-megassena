@@ -1,4 +1,4 @@
-# Documentação da API de Números da Mega-Sena
+# API de Números da Mega-Sena
 
 Esta é uma API simples que fornece uma sequência de números da Mega-Sena.
 
