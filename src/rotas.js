@@ -7,7 +7,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/numeros-megassena', (req, res) => {
-    res.send(modulo.sequencia());
+    let filtro = req.query.filtro
+    filtro ? filtro.toLowerCase() : null;
+
+    !filtro ? res.send(modulo.sequencia()) : filtro === 'pares' ? res.send(modulo.sequenciaDeNumerosPares()) : filtro === 'impares' ? res.send(modulo.sequenciaDeNumerosImpares()) : res.send('Filtro inválido! Tente novamente.');
 });
+
 
 module.exports = router;

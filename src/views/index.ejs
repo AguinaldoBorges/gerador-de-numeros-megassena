@@ -8,6 +8,8 @@
     <!-- Incluindo os estilos do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Incluindo os estilos do Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             background-color: #f4f4f4;
@@ -21,8 +23,13 @@
             margin-top: 30px;
         }
 
-        .route-section {
-            margin-top: 20px;
+        .intro-section {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        #banner {
+            width: 60%;
         }
 
         h1,
@@ -32,6 +39,7 @@
         h5,
         h6 {
             color: #17a2b8;
+            margin-bottom: 20px;
         }
 
         pre {
@@ -43,29 +51,81 @@
         .note {
             font-style: italic;
         }
+
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+        }
+
+        .bounceIn {
+            animation-name: bounceIn;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="text-center">Documentação da API de Números da Mega-Sena</h1>
+    <div class="container animated fadeIn">
+        <div class="intro-section animated bounceIn">
+            <h1 class="text-center">Bem-vindo à API de Números da Mega-Sena</h1>
+            <p>Obtenha sequências de números da Mega-Sena de forma fácil e rápida!</p>
+            <img src="https://proxy.olhardigital.com.br/wp-content/uploads/2022/10/mega-sena-1.jpg"
+                alt="Imagem da Mega-Sena" class="img-fluid" id="banner">
+        </div>
 
         <div class="route-section">
             <h2>Rotas</h2>
 
             <div class="route">
                 <h3>1. Rota para Obter uma Sequência de Números da Mega-Sena</h3>
-                <p><strong>URL:</strong> /<a href="http://localhost:3000/numeros-megassena">/numeros-megassena</a></p>
+                <p><strong>URL:</strong> /numeros-megassena</p>
                 <p><strong>Método:</strong> GET</p>
-                <p><strong>Descrição:</strong> Esta rota retorna uma sequência de números da Mega-Sena.</p>
+                <p><strong>Descrição:</strong> Esta rota retorna sequências de números da Mega-Sena com base em filtros
+                    específicos. Você pode utilizar o parâmetro "filtro" para especificar o tipo de sequência desejada.
+                </p>
+
+                <h4>Parâmetros</h4>
+                <ul>
+                    <li><strong>filtro (opcional):</strong> Um parâmetro de consulta que especifica o filtro para a
+                        sequência desejada.
+                        <ul>
+                            <li>"pares": Retorna uma sequência contendo apenas números pares.</li>
+                            <li>"impares": Retorna uma sequência contendo apenas números ímpares.</li>
+                        </ul>
+                    </li>
+                </ul>
 
                 <h4>Exemplo de Requisição</h4>
-                <pre>GET /numeros-megassena</pre>
+                <ul>
+                    <li>Obtendo uma sequência completa:
+                        <pre>GET /numeros-megassena</pre>
+                    </li>
+                    <li>Obtendo uma sequência de números pares:
+                        <pre>GET /numeros-megassena?filtro=pares</pre>
+                    </li>
+                    <li>Obtendo uma sequência de números ímpares:
+                        <pre>GET /numeros-megassena?filtro=impares</pre>
+                    </li>
+                </ul>
 
                 <h4>Resposta de Exemplo</h4>
-                <pre>
-[ 5, 12, 22, 30, 45, 55 ]
-                </pre>
+                <ul>
+                    <li>Sequência completa de números da Mega-Sena:
+                        <pre>[5, 12, 22, 30, 45, 55]</pre>
+                    </li>
+                    <li>Sequência de números pares da Mega-Sena:
+                        <pre>[4, 12, 22, 30, 46, 56]</pre>
+                    </li>
+                    <li>Sequência de números ímpares da Mega-Sena:
+                        <pre>[41, 1, 11, 13, 5, 25]</pre>
+                    </li>
+                    <li>Filtro inválido (quando o parâmetro "filtro" não é "pares" ou "impares"):
+                        <pre>Filtro inválido! Tente novamente.</pre>
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -98,13 +158,13 @@
         <div class="route-section">
             <h2>Observações</h2>
 
-            <p class="note">Esta API é uma implementação simples apenas para fins ilustrativos.</p>
-            <p class="note">A sequência de números gerada é fictícia e não tem relação com os resultados reais da
-                Mega-Sena.</p>
-            <p class="note">O módulo modulos.js deve ser personalizado para atender às necessidades reais do seu
-                projeto.</p>
-            <p class="note">Lembre-se de substituir a sequência de números gerada pelo módulo modulos.js por uma
-                implementação que atenda aos requisitos reais da sua aplicação.</p>
+            <p class="note">Esta funcionalidade permite obter sequências específicas de números da Mega-Sena com base em
+                filtros.</p>
+            <p class="note">Lembre-se de utilizar o parâmetro "filtro" na consulta para especificar o tipo de sequência
+                desejada.</p>
+            <p class="note">Os filtros disponíveis são "pares" e "impares."</p>
+            <p class="note">Esta API é uma implementação simples apenas para fins ilustrativos. A sequência de números
+                gerada é fictícia e não tem relação com os resultados reais da Mega-Sena.</p>
         </div>
     </div>
 </body>
