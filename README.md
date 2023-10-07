@@ -4,6 +4,33 @@ Esta é uma API simples que fornece uma sequência de números da Mega-Sena.
 
 ![ok](./src/assets/screen0.jpg)
 
+## Como Executar Localmente
+
+Para executar esta API localmente, siga os passos abaixo:
+
+### Pré-requisitos
+
+Certifique-se de que você tem o Node.js instalado no seu sistema. Você pode baixá-lo em [nodejs.org](https://nodejs.org/).
+
+### Instalação
+
+1. Clone este repositório para o seu sistema ou faça o download do código-fonte.
+
+2. Navegue até o diretório raiz do projeto.
+
+3. Abra um terminal ou prompt de comando no diretório raiz e execute o seguinte comando para instalar as dependências do projeto:
+
+       npm install
+
+### Executando a API
+
+Após a instalação das dependências, você pode iniciar a API com o seguinte comando:
+    
+    npm start
+
+A API será executada localmente e a DOCUMENTAÇÃO estará disponível em `http://localhost:3000/`.
+![ok](./src/assets/screen1.jpg)
+
 ## Rotas
 
 ### 1. Rota para Obter uma Sequência de Números da Mega-Sena
@@ -79,8 +106,6 @@ A resposta depende do filtro especificado:
 http://localhost:3000/
 
 Servidor rodando na porta 3000
-
-![ok](./src/assets/screen1.jpg)
 
 ## Observações
 * Esta API é uma implementação simples apenas para fins ilustrativos.
